@@ -80,7 +80,11 @@ export default {
     },
     methods: {
         notice() {
-            this.$notice.open({})
+            this.$notice.open({
+                title:'测试',
+                date:'2020-03-23',
+               
+            })
         },
         test1() {
             this.$message({

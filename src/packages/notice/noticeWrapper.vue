@@ -1,6 +1,10 @@
 <template>
     <div :class="prefixCls" :style="wrapStyles">
-        <Item v-for="notice in notices" :key="notice.name" :prefixCls="prefixCls" :duration="notice.duration" :name="notice.name" :onClose="notice.onClose">
+        <Item v-for="notice in notices" :key="notice.name" 
+        :title="notice.title"
+        :date="notice.date"
+        :content="notice.content"
+        :prefixCls="prefixCls" :duration="notice.duration" :name="notice.name" :onClose="notice.onClose">
         </Item>
     </div>
 </template>

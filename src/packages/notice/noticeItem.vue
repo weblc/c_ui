@@ -6,10 +6,12 @@
 <template>
     <transition :name="transitionName" appear>
         <div :class="[prefixCls + '-item']">
-            <p>{{ name }}</p>
-            <p>李总叼鸡婆</p>
-            <p>刘董傻嗨嗨</p>
-            <p>大厨憨啾啾</p>
+            <div>
+                <span>{{title}}</span>
+                <span>{{date}}</span>
+            </div>
+            <div>{{content}}</div>
+            
         </div>
     </transition>
 </template>
@@ -30,9 +32,25 @@ export default {
             type: String,
             required: true,
         },
+        title: {
+            type: String,
+            required: true,
+        },
+        date: {
+            type: String,
+            default:''
+        },
+        content: {
+            type: String,
+            required: true,
+        },
         onClose: {
             type: Function,
         },
+        autoClose:{
+            type:Boolean,
+            default:false
+        }
     },
     data() {
         return {
@@ -113,6 +131,7 @@ export default {
 .cui-notice-item {
     border: 1px solid #ccc;
     margin-bottom: 20px;
+    padding: 15px;
 }
 .cui-notice-move-enter-active,
 .cui-notice-move-appear {

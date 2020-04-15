@@ -8,6 +8,9 @@ let name = 1
 let noticeWrapper
 const notice = (type, options) => {
     const onClose = options.onClose || function() {}
+    const title = options.title || 'title'
+    const date = options.date || ''
+    const content = options.content || ''
     let nameKey = options.name || `${noticeItemKey}${name}`
 
     name++
@@ -26,6 +29,9 @@ const notice = (type, options) => {
         duration: defaultDuration,
         name: nameKey,
         onClose: onClose,
+        title:title,
+        date:date,
+        content:content,
     })
 }
 
