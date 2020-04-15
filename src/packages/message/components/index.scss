@@ -1,0 +1,60 @@
+$message-prefix-cls:'c-message';
+
+$base-index:2088;
+
+.#{$message-prefix-cls} {
+    font-size: 12px;
+    box-sizing: border-box;
+    min-width: 380px;
+    border-radius: 4px;
+    position: fixed;
+    z-index: 2088;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+
+    overflow: hidden;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    align-items: center;
+    transition: opacity .3s, transform .4s;
+
+    &-info.#{$message-prefix-cls} {
+        background-color: #edf2fc;
+    }
+
+    &-success.#{$message-prefix-cls} {
+        background-color: #19be6b;
+    }
+
+    &-error.#{$message-prefix-cls} {
+        background-color: #ed4014;
+    }
+
+    &-warning.#{$message-prefix-cls} {
+        background-color: #ff9900;
+    }
+    .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+
+
+}
+
+.c-message-fade-enter-active {
+    transition: all .3s linear;
+}
+
+.c-message-fade-leave-active {
+    transition: all .3s linear;
+}
+
+.c-message-fade-enter,
+.c-message-fade-leave-to {
+    top: -20px;
+    opacity: 0;
+}

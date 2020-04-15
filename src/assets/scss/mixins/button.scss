@@ -1,0 +1,94 @@
+$btn-default-text-color:#fff;
+$btn-default-color:#515a6e;
+$btn-default-bg:#f7f7f7;
+$btn-default-border:#dcdee2;
+
+$btn-primary-color:#fff;
+$btn-primary-bg:#39f;
+
+$btn-success-color:#fff;
+$btn-success-bg:#19be6b;
+$btn-warning-bg:#ff9900;
+$btn-error-bg:#ed4014;
+@mixin btn-size($padding,$font-size,$border-radius) {
+    padding : $padding;
+    font-size : $font-size;
+    border-radius : $border-radius;
+}
+
+@mixin btn-color($color,$bg,$border) {
+    color: $color;
+    background-color:$bg;
+    border-color: $border;
+    
+}
+
+@mixin btn-variant($color,$bg,$border) {
+    @include btn-color($color,$bg,$border);
+    &:hover{
+        @include btn-color(lighten($color, 10%), lighten($bg, 10%), lighten($border, 10%));
+    }
+    &:active,
+    &.active {
+        @include btn-color(fade-in($color, 0.05), fade-in($bg, 0.05),fade-in($border, 0.05));
+    }
+}
+
+@mixin  btn-default() {
+    @include btn-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+    &:hover{
+        @include btn-color(lighten($btn-primary-bg, 10%), white,lighten($btn-primary-bg, 10%));
+    }
+    &:active,
+    &.active {
+        @include btn-color(fade-in($btn-primary-bg, 0.2), white,fade-in($btn-primary-bg, 0.2));
+    }
+   
+}
+
+@mixin  btn-primary() {
+    @include btn-variant($btn-default-text-color, $btn-primary-bg,$btn-primary-bg);
+    &:hover,
+    //&:focus,
+    &:active,
+    &.active {
+        color: $btn-default-text-color;
+    }
+   
+}
+
+@mixin  btn-success() {
+    @include btn-variant($btn-default-text-color, $btn-success-bg,$btn-success-bg);
+    &:hover,
+    //&:focus,
+    &:active,
+    &.active {
+        color: $btn-default-text-color;
+    }
+   
+}
+
+@mixin  btn-warning() {
+    @include btn-variant($btn-default-text-color, $btn-warning-bg,$btn-warning-bg);
+    &:hover,
+    //&:focus,
+    &:active,
+    &.active {
+        color: $btn-default-text-color;
+    }
+}
+
+@mixin  btn-error() {
+    @include btn-variant($btn-default-text-color, $btn-error-bg,$btn-error-bg);
+    &:hover,
+    //&:focus,
+    &:active,
+    &.active {
+        color: $btn-default-text-color;
+    }
+}
+
+
+
+
+

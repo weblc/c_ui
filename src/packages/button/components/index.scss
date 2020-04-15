@@ -1,0 +1,48 @@
+@import '~@/assets/scss/mixins/button.scss';
+$btn-prefix-cls:'c-btn';
+
+
+$btn-font-weight:400;
+
+$btn-padding:6px 15px;
+$btn-font-size:12px;
+$btn-border-radius:4px;
+.#{$btn-prefix-cls}{
+    @include btn-default();
+    @include btn-size($btn-padding,$btn-font-size,$btn-border-radius);
+    display: inline-block;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    border: 1px solid #d7dde4;
+    &:active,
+    &:focus {
+        outline: 0;
+    }
+    &-default {
+        @include btn-default();
+    }
+    &-primary {
+        @include btn-primary();
+    }
+    &-success {
+        @include btn-success();
+    }
+    &-warning {
+        @include btn-warning();
+    }
+    &-error {
+        @include btn-error();
+    }
+    &-ghost {
+        background-color: transparent; 
+    }
+}
+
